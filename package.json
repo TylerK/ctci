@@ -1,0 +1,17 @@
+{
+  "name": "ctci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mocha --recursive --watch ./**/*.spec.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tyler Kelley <tylerckelley@gmail.com> (http://twitter.com/_tkwd)",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.1",
+    "sinon": "^1.17.5"
+  }
+}
