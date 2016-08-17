@@ -1,12 +1,12 @@
 /**
  * palindromePermutation - Given a string, checks if it is a permutation of a palindrome.
- * Will only strip numbers and spaces for the purposes of brevity.
+ * Assuming letters and spaces only.
  * @param  {String} string
  * @return {Boolean}
  */
 function palindromePermutation (string) {
   const charCounts = {}
-  const trimmedString = string.replace(/\d+| /g, '').toLowerCase()
+  const trimmedString = string.replace(' ', '').toLowerCase()
 
   let sum = 0
 
