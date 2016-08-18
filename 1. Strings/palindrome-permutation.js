@@ -1,3 +1,5 @@
+const charCounts = require('../utils/strings').charCounts
+
 /**
  * palindromePermutation - Given a string, checks if it is a permutation of a palindrome.
  * Assuming letters and spaces only.
@@ -5,23 +7,13 @@
  * @return {Boolean}
  */
 function palindromePermutation (string) {
-  const charCounts = {}
   const trimmedString = string.replace(' ', '').toLowerCase()
+  const counts = charCounts(trimmedString)
 
   let sum = 0
 
-  for (let i = 0; i < trimmedString.length; i++) {
-    const char = trimmedString[i]
-
-    if (charCounts[char]) {
-      charCounts[char]++
-    } else {
-      charCounts[char] = 1
-    }
-  }
-
-  for (let char in charCounts) {
-    sum += charCounts[char] % 2
+  for (let char in counts) {
+    sum += counts[char] % 2
   }
 
   return sum < 2

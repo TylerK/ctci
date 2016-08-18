@@ -1,3 +1,5 @@
+const charCounts = require('../utils/strings').charCounts
+
 /**
  * compressString - Compresses repeating characters to a letter and count combo
  * Returns the compressed string, if the compressed length is less than the supplied string's length
@@ -6,20 +8,12 @@
  * @return {String} Example: "dog3ies2"
  */
 function compressString (string) {
-  const sortedString = string.toLowerCase().split('').sort()
-  const charCounts = {}
-
-  sortedString.forEach(c => {
-    if (!charCounts[c]) {
-      charCounts[c] = 1
-    } else {
-      charCounts[c]++
-    }
-  })
+  const sortedString = string.toLowerCase().split('').sort().join('')
+  const counts = charCounts(sortedString)
 
   let compressed = []
-  for (let char in charCounts) {
-    compressed.push(`${char}${charCounts[char]}`)
+  for (let char in counts) {
+    compressed.push(`${char}${counts[char]}`)
   }
 
   compressed = compressed.join('')
